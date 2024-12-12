@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "spotify-tracker"
+version = "0.1.0"
+description = "Milo and I want to beat spotify wrapped into the ground so this is our time to show the REAL wrapped results"
+authors = ["devilsquares <awesomeboii21@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
