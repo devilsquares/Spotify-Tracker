@@ -1,5 +1,11 @@
 import requests
-token = "BQCrGjgbvnVv363SumfTTrF42NvzCBwkNqnGROD5heiew6umRvl0UiCGGxKHLt_BNGMWoPa3SSoaFEzhI6EduQcXnq8p0uhtzXBvMDJ-JQz-KJ-x1HcQk_lnd8yMEP26NoN1D0E_CqOFzGh5USpDD6YhASgBpcua7-EcrPc0okBYs5cNf45rep8kjbtN2GJeEhGDe7Zyc5st_DERiieqOzg5zSIzhoqI1KDlXbTUJSKHMadmzkFv-j0wCUUg3D87s4F_PUKsJwQ-RA0SPFgEaK2lqj6yFT2l"
+import json
+with open("spotify-oauth-response.json", "r") as file:
+    file_contents = file.read()
+    print(file_contents)
+oauth_data = json.loads(file_contents)
+token = oauth_data["access_token"]
+
 headers = {"Authorization": f"Bearer {token}"}
 response = requests.get("https://api.spotify.com/v1/me/player/recently-played/", headers=headers)
 data = response.json()
